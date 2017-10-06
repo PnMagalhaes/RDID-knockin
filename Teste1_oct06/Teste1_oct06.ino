@@ -1,6 +1,5 @@
 unsigned long t;
 unsigned long tmp;
-unsigned long delta[10];
 
 unsigned long times[10];
 const int sensorPin=0;
@@ -13,14 +12,11 @@ const int threshold=30;
 int i = 0;
 >>>>>>> 71d4c2466cf6e48567a4c7a5f2e4069aed71c8ba
 
-void setup(){
 void setup()
 {
   pinMode(ledPin, OUTPUT);
   Serial.begin(9600);
 }
-void loop(){
-
 void loop()
 {
   
