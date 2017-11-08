@@ -26,13 +26,13 @@ def serial_ports():
     for port in ports:
         try:
             s = serial.Serial(port)
-            for a in serial.tools.list_ports.comports():
-                print(a.hwid)
+            #for a in serial.tools.list_ports.comports():
+                #print(a.hwid)
             s.close()
             result.append(port)
         except (OSError, serial.SerialException):
             pass
-    return result
+    return result[0]
 
 
 def on_press(key):
@@ -61,5 +61,5 @@ def timmeKeys():
     a = strokes
     return ([x - a[i - 1] for i, x in enumerate(a)][1:])
 
-# if __name__ == '__main__':
-#    timmeKeys()
+if __name__ == '__main__':
+    print (serial_ports())
