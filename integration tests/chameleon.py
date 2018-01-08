@@ -11,7 +11,7 @@ class chameleon:
     def __init__(self):
         self.PORT = None
         self.SERIAL = None
-        self.ss = socket.socket(socket.AF_INET, SOCK_DGRAM)
+        self.ss = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.ss.bind("", 5005)
         self.ss.settimeout(4)
         
