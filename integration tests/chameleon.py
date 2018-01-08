@@ -49,6 +49,8 @@ class chameleon:
     def loop(self):
         while True:
             data, addr = self.ss.recvfrom(1024)
+            if "True" in data:
+                self.writing()
 
     def stop(self):
         try:
