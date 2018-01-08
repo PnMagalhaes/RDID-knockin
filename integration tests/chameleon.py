@@ -31,21 +31,15 @@ class chameleon:
             return None
         return self.SERIAL
 
-    def writing(self, command="getuid"):
-        print 'ola'
+    def writing(self,addr, command="getuid"):
         self.SERIAL.write ( command + '\r' )
-        print 'ola2'
         retval = ''
         retcode = self.SERIAL.readline()
-        print 'ola3'
+        print retcode
         if int(retcode.split(':')[0]) == self.RESPONSE_OK_TEXT:
             retval = self.SERIAL.readline()
-            print 'entrou'
-            print(retval)
-        else:
-            print 'ola error'
-        print str(retval)
-        self.ss.sendto(retval.strip(), ('', 5005))
+        print (retcode, retval)
+        self.ss.sendto(retval.strip(), addr)
         return (retcode.strip(),retval.strip())
 
     def close(self):
@@ -56,12 +50,11 @@ class chameleon:
 
     def loop(self):
         while True:
-            print 'ola2'
             data, addr = self.ss.recvfrom(1024)
             print(data)
             if "True" in data:
                 print 'in'
-                self.writing()
+                self.writing( addr)
 
     def stop(self):
         try:
@@ -74,6 +67,7 @@ if __name__ == '__main__':
     ch = chameleon()
     while True:
         try:
+            ch.connect()
             ch.loop()
         except KeyboardInterrupt:
             ch.stop()
@@ -85,6 +79,7 @@ if __name__ == '__main__':
             if ch is not (None):
                 ch.stop()
         time.sleep(10)
+
         
 '''
 ch = chameleon()

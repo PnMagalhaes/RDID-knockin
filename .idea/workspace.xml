@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6f20c2b-894b-4845-a695-31f5a91fe6a2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Server/db.py" afterPath="$PROJECT_DIR$/Server/db.py" />
-      <change beforePath="$PROJECT_DIR$/Server/server.py" afterPath="$PROJECT_DIR$/Server/server.py" />
-      <change beforePath="$PROJECT_DIR$/Server/server_actions.py" afterPath="$PROJECT_DIR$/Server/server_actions.py" />
-      <change beforePath="$PROJECT_DIR$/admin-page/.idea/workspace.xml" afterPath="$PROJECT_DIR$/admin-page/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/admin-page/index.html" afterPath="$PROJECT_DIR$/admin-page/index.html" />
-      <change beforePath="$PROJECT_DIR$/admin-page/js/my_db.js" afterPath="$PROJECT_DIR$/admin-page/js/my_db.js" />
-      <change beforePath="$PROJECT_DIR$/admin-page/js/my_users_db.js" afterPath="$PROJECT_DIR$/admin-page/js/my_users_db.js" />
-      <change beforePath="$PROJECT_DIR$/admin-page/login.html" afterPath="$PROJECT_DIR$/admin-page/login.html" />
-      <change beforePath="$PROJECT_DIR$/admin-page/register.html" afterPath="$PROJECT_DIR$/admin-page/register.html" />
-      <change beforePath="$PROJECT_DIR$/admin-page/users.html" afterPath="$PROJECT_DIR$/admin-page/users.html" />
-      <change beforePath="$PROJECT_DIR$/fgraph.py" afterPath="$PROJECT_DIR$/fgraph.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/integration tests/chameleon.py" afterPath="$PROJECT_DIR$/integration tests/chameleon.py" />
-      <change beforePath="$PROJECT_DIR$/rfid.db" afterPath="$PROJECT_DIR$/rfid.db" />
+      <change beforePath="$PROJECT_DIR$/run.sh" afterPath="$PROJECT_DIR$/run.sh" />
       <change beforePath="$PROJECT_DIR$/web-server.py" afterPath="$PROJECT_DIR$/web-server.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,18 +19,18 @@
       <file leaf-file-name="web-server.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web-server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="259" column="13" lean-forward="true" selection-start-line="259" selection-start-column="13" selection-end-line="259" selection-end-column="13" />
+            <state relative-caret-position="381">
+              <caret line="261" column="16" lean-forward="true" selection-start-line="261" selection-start-column="16" selection-end-line="261" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="run.sh" pinned="false" current-in-tab="false">
+      <file leaf-file-name="run.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/run.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+            <state relative-caret-position="88">
+              <caret line="4" column="63" lean-forward="true" selection-start-line="4" selection-start-column="63" selection-end-line="4" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -66,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chameleon.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="chameleon.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/integration tests/chameleon.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="37" column="19" lean-forward="true" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+            <state relative-caret-position="506">
+              <caret line="41" column="44" lean-forward="true" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -142,10 +132,10 @@
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/test_server.py" />
         <option value="$PROJECT_DIR$/fgraph.py" />
-        <option value="$PROJECT_DIR$/run.sh" />
         <option value="$PROJECT_DIR$/integration tests/utils.py" />
         <option value="$PROJECT_DIR$/web-server.py" />
         <option value="$PROJECT_DIR$/integration tests/chameleon.py" />
+        <option value="$PROJECT_DIR$/run.sh" />
       </list>
     </option>
   </component>
@@ -299,7 +289,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39930555" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39930555" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -405,14 +395,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/integration tests/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
@@ -429,14 +411,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web-server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="259" column="13" lean-forward="true" selection-start-line="259" selection-start-column="13" selection-end-line="259" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -447,8 +421,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/integration tests/chameleon.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="37" column="19" lean-forward="true" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+        <state relative-caret-position="506">
+          <caret line="41" column="44" lean-forward="true" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="261" column="16" lean-forward="true" selection-start-line="261" selection-start-column="16" selection-end-line="261" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="63" lean-forward="true" selection-start-line="4" selection-start-column="63" selection-end-line="4" selection-end-column="63" />
           <folding />
         </state>
       </provider>

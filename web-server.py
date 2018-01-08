@@ -256,7 +256,7 @@ class WebPage(object): #Root
 		sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 		sock.sendto('True', (UDP_IP, UDP_PORT))
 		print 'ola'
-		sock.settimeout(5)
+		sock.settimeout(20)
 		try :
 			data, addr = sock.recvfrom(1024)  # buffer size is 1024 bytes
 		except :
