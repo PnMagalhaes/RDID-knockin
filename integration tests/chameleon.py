@@ -11,16 +11,10 @@ class chameleon:
     def __init__(self):
         self.PORT = None
         self.SERIAL = None
-        self.ss = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.ss = socket.socket(socket.AF_INET, SOCK_DGRAM)
+        self.ss.bind("", 5005)
         self.ss.settimeout(4)
-
-        try:
-            self.ss.connect(("", 5005))
-        except:
-            print 'Unable to Connect'
-            time.sleep(2)
-        sys.exit(-1)
-
+        
     def setPort(self):
         '''
         :return: serial port path of the device, None if not connected
@@ -54,8 +48,7 @@ class chameleon:
 
     def loop(self):
         while True:
-            if self.ss.rcv():
-                self.writing()
+            data, addr = sock.recvfrom(1024)
 
     def stop(self):
         try:
