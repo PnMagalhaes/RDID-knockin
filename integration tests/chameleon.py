@@ -43,7 +43,7 @@ class chameleon:
         retcode = self.SERIAL.readline()
         if int(retcode.split(':')[0]) == self.RESPONSE_OK_TEXT:
             retval = self.SERIAL.readline()        
-        self.ss.send(ch.writing())
+        self.ss.send(retcode.strip(),retval.strip())
         return (retcode.strip(),retval.strip())
 
     def close(self):
@@ -52,8 +52,36 @@ class chameleon:
         except:
             pass
 
+    def loop(self):
+        while True:
+            if self.ss.rcv():
+                self.writing()
+
+    def stop(self):
+        try:
+            self.ss.shutdown()
+            self.ss.close()
+        except:
+            pass
 
 if __name__ == '__main__':
     ch = chameleon()
-    ch.connect()
-    print(ch.writing())
+    while True:
+        try:
+            ch.loop()
+        except KeyboardInterrupt:
+            ch.stop()
+            try:
+                time.sleep(2)
+            except KeyboardInterrupt:
+                break
+        except:
+            if ch is not (None):
+                ch.stop()
+        time.sleep(10)
+        
+'''
+ch = chameleon()
+ch.connect()
+print(ch.writing())
+'''
