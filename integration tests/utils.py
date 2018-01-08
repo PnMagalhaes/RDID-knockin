@@ -1,5 +1,4 @@
 import sys, glob, serial, serial.tools.list_ports, time
-from pynput import keyboard
 
 strokes = []
 st = []
@@ -32,34 +31,7 @@ def serial_ports():
             result.append(port)
         except (OSError, serial.SerialException):
             pass
-    return result[0]
-
-
-def on_press(key):
-    if key == keyboard.Key.esc:
-        # Stop listener
-        return False
-    try:
-        strokes.append(time.time())
-        # print(' alphanumeric key {0} pressed'.format(key.char))
-    except AttributeError:
-        strokes.append(time.time())
-        # print(' special key {0} pressed'.format(key))
-
-
-def on_release(key):
-    # print('{0} released'.format(key))
-    if key == keyboard.Key.esc:
-        # Stop listener
-        return False
-
-
-def timmeKeys():
-    # Collect events until released
-    with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
-        listener.join()
-    a = strokes
-    return ([x - a[i - 1] for i, x in enumerate(a)][1:])
+    return result
 
 if __name__ == '__main__':
     print (serial_ports())

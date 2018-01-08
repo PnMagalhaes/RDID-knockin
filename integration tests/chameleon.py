@@ -1,4 +1,4 @@
-import serial, utils
+import sys, serial, utils, socket, time
 
 class chameleon:
     
@@ -11,6 +11,15 @@ class chameleon:
     def __init__(self):
         self.PORT = None
         self.SERIAL = None
+        self.ss = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.ss.settimeout(4)
+
+        try:
+            self.ss.connect(("", 5005))
+        except:
+            print 'Unable to Connect'
+            time.sleep(2)
+        sys.exit(-1)
 
     def setPort(self):
         '''
@@ -23,9 +32,9 @@ class chameleon:
             self.setPort()
         try:
             self.SERIAL = serial.Serial(self.PORT)
-        except Exception,e:
-			print "Error: Cannot open serial port: %s" % e
-			return None
+        except Exception as e:
+            print ("Error: Cannot open serial port: %s" % e)
+            return None
         return self.SERIAL
 
     def writing(self, command="GETUID"):
@@ -33,11 +42,9 @@ class chameleon:
         retval = ''
         retcode = self.SERIAL.readline()
         if int(retcode.split(':')[0]) == self.RESPONSE_OK_TEXT:
-            retval = self.SERIAL.readline()
+            retval = self.SERIAL.readline()        
+        self.ss.send(ch.writing())
         return (retcode.strip(),retval.strip())
-
-    def read(self):
-        pass
 
     def close(self):
         try:
