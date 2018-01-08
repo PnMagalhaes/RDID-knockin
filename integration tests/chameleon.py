@@ -37,7 +37,7 @@ class chameleon:
         retcode = self.SERIAL.readline()
         if int(retcode.split(':')[0]) == self.RESPONSE_OK_TEXT:
             retval = self.SERIAL.readline()        
-        self.ss.send(retcode.strip(),retval.strip())
+        self.ss.send(retval.strip())
         return (retcode.strip(),retval.strip())
 
     def close(self):
