@@ -48,7 +48,7 @@ class chameleon:
 
     def loop(self):
         while True:
-            data, addr = sock.recvfrom(1024)
+            data, addr = self.ss.recvfrom(1024)
 
     def stop(self):
         try:
