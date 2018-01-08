@@ -10,10 +10,10 @@ class ServerActions:
             
             'connect': self.processCreate,
             
-            'status': self.processStatus
+            'validate': self.processStatus
         }
 
-        self.db = DataBase()
+        self.db = DataBase('../rfid.db')
 
     def handleRequest(self, s, request, client):
         """Handle a request from a client socket.
@@ -62,17 +62,18 @@ class ServerActions:
     def processStatus(self, data, client):
         logging.debug( "%s" % json.dumps(data))
 
-        if not set({'knock', 'rfid'}).issubset(set(data.keys())):
+        if not set({'knock', 'rfid', 'door'}).issubset(set(data.keys())):
             logging.error( "Badly formated \"status\" message: " +
                 json.dumps(data))
             client.sendResult({"error": "wrong message format", "seq": data["seq"]})
         
         knock = data['knock']
         
-        rfid = data["rfid"]
-
-        
+        uid = data["rfid"]
+        door_data = data["door"]
+        self.db.c.execute('select _id from doors where location =? and num= ?', (door_data[1], door_data[0]) )
+        client.id = self.db.c.fetchone()[0]
         #boolean
-        response = self.db.validate(knock, rfid)
-        client.sendResult({"result": response, "seq": data["seq"]})
+        response = self.db.validate(list_knock= knock , _pass= uid, door_id=client.id)
+        client.sendResult({"type": 'validate',"result": response, "seq": data["seq"]})
 

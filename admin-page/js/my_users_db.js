@@ -26,7 +26,7 @@ function edit_user(door) {
 }
 
 function update_user() {
-    /*try{
+    try{
         var num = parseInt($('#text_num').val());
     }catch(err){
         alert("ERROR: Number not integer!");
@@ -36,7 +36,7 @@ function update_user() {
 
 
     $.ajax({
-        url:'http://localhost:8080/generator?_id=' +  model_door+ '&num=' + num + '&loc='+ loc,
+        url:'http://localhost:8080/generator?t=2_id=' +  model_door+ '&num=' + num + '&loc='+ loc,
         type: 'PUT',
         success: function(json) {
             var obj = jQuery.parseJSON( json );
@@ -51,7 +51,7 @@ function update_user() {
             }
 
         }
-    });*/
+    });
 
-    $('#myModal').modal('hide');
+    //$('#myModal').modal('hide');
 }

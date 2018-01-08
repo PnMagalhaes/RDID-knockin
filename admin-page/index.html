@@ -159,6 +159,60 @@
 
         <button class="btn" onclick="add_door()">Add Door</button>
 
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">
+                            Add Door
+                        </h4>
+                        <button type="button" class="close"
+                                data-dismiss="modal">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+
+                    </div>
+
+                    <!-- Modal Body -->
+                    <div class="modal-body">
+
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="text_num">Number</label>
+                                <input type="text" class="form-control"
+                                       id="text_num" placeholder="Number"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="text_loc">Location</label>
+                                <input type="text" class="form-control"
+                                       id="text_loc" placeholder="Location"/>
+                            </div>
+
+
+
+                        </form>
+
+
+                    </div>
+
+                    <!-- Modal Footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default"
+                                data-dismiss="modal">
+                            Close
+                        </button>
+                        <button type="button" class="btn btn-primary" onclick="update_door()">
+                            Save changes
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- END of Content-->
 
     </div>
@@ -211,7 +265,7 @@
 <!-- Custom scripts for this page
 <script src="js/sb-admin-charts.min.js"></script>-->
 <!-- populate tablesJavaScript-->
-<script src="/static/js/my_stats_db.js"></script>
+<script src="/static/js/my_index_db.js"></script>
 
 
 </div>

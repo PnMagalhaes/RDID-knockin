@@ -2,15 +2,15 @@ import sqlite3
 
 class DataBase(object):
 	"""docstring for DataBase"""
-	def __init__(self):
+	def __init__(self, file_path='rfid.db' ):
 				
 		#connect to database
-		self.conn = sqlite3.connect('rfid.db')
+		self.conn = sqlite3.connect(file_path)
 		self.c = self.conn.cursor()
 		self.c.execute("PRAGMA foreign_keys = ON")
 		
 	def validate(self, list_knock , _pass, door_id):
-		self.c.execute('select _id, knock from users where uid=?', _pass)
+		self.c.execute('select _id, knock from users where uid=?',(_pass,))
 		r = self.c.fetchone()
 		if r ==None:
 			return (False, "UID" + _pass + "not in database" )

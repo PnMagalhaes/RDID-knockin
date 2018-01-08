@@ -12,7 +12,7 @@ class chameleon:
         self.PORT = None
         self.SERIAL = None
         self.ss = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        self.ss.bind("", 5005)
+        self.ss.bind(("", 5005))
         self.ss.settimeout(4)
         
     def setPort(self):
@@ -31,13 +31,21 @@ class chameleon:
             return None
         return self.SERIAL
 
-    def writing(self, command="GETUID"):
+    def writing(self, command="getuid"):
+        print 'ola'
         self.SERIAL.write ( command + '\r' )
+        print 'ola2'
         retval = ''
         retcode = self.SERIAL.readline()
+        print 'ola3'
         if int(retcode.split(':')[0]) == self.RESPONSE_OK_TEXT:
-            retval = self.SERIAL.readline()        
-        self.ss.send(retval.strip())
+            retval = self.SERIAL.readline()
+            print 'entrou'
+            print(retval)
+        else:
+            print 'ola error'
+        print str(retval)
+        self.ss.sendto(retval.strip(), ('', 5005))
         return (retcode.strip(),retval.strip())
 
     def close(self):
@@ -48,8 +56,11 @@ class chameleon:
 
     def loop(self):
         while True:
+            print 'ola2'
             data, addr = self.ss.recvfrom(1024)
+            print(data)
             if "True" in data:
+                print 'in'
                 self.writing()
 
     def stop(self):

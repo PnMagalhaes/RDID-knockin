@@ -4,15 +4,16 @@ import random
 import string
 import os, os.path
 import json
-from Server.db import *
+from db import *
 from fgraph import *
+import socket
 
 DB_STRING = 'rfid.db'
 
 SESSION_KEY = '_cp_username'
 
 def check_credentials(username, password):
-	print "ola1"
+
 	"""Verifies credentials for username and password.
 	Returns None on success or a string describing the error on failure"""
 	# Adapt to your needs
@@ -29,7 +30,7 @@ def check_credentials(username, password):
 	#     return u"Incorrect password"
 
 def check_auth(*args, **kwargs):
-	print "ola2"
+
 	"""A tool that looks in config for 'auth.require'. If found and it
 	is not None, a login is required and the entry is evaluated as a list of
 	conditions that the user must fulfill"""
@@ -48,7 +49,7 @@ def check_auth(*args, **kwargs):
 cherrypy.tools.auth = cherrypy.Tool('before_handler', check_auth)
 
 def require(*conditions):
-	print "ola3"
+
 	"""A decorator that appends conditions to the auth.require config
 	variable."""
 	def decorate(f):
@@ -118,13 +119,14 @@ class AuthController(object):
 	
 	@cherrypy.expose
 	def login(self, username=None, password=None, from_page="/"): 
-		print '\n\n ola \n\n'
+
 		if username is None or password is None:
-			return self.get_loginform("", from_page=from_page)
+			raise cherrypy.HTTPRedirect("/login")
 		
 		error_msg = check_credentials(username, password)
 		if error_msg:
-			return self.get_loginform(username, error_msg, from_page)
+			#return self.get_loginform(username, error_msg, from_page)
+			raise cherrypy.HTTPRedirect("/login")
 		else:
 			cherrypy.session[SESSION_KEY] = cherrypy.request.login = username
 			self.on_login(username)
@@ -144,20 +146,22 @@ class AuthController(object):
 
 
 @cherrypy.expose
+class WebService(): #restricted
 
-class WebService(object): #restricted
 	_cp_config = {
 		'request.dispatch': cherrypy.dispatch.MethodDispatcher(),
 		'tools.response_headers.on': True,
 		'tools.response_headers.headers': [('Content-Type', 'text/plain')],
 		'auth.require': [member_of('admin')]
 	}
-	
+
 	# all methods in this controller (and subcontrollers) is
 	# open only to members of the admin group
 	@cherrypy.tools.accept(media='text/plain')
+	@cherrypy.expose
 	def GET(self,  t = None, doorId=None,_=None,  email= None, user=None, d1= None, d2= None):
 		t = int(t)
+		print "\n\n\n ola"
 		if t == 1 :
 			return get_table_all_doors()
 		if t == 2 :
@@ -177,34 +181,52 @@ class WebService(object): #restricted
 		if t== 9:
 			return get_table_all_access()
 		if t== 10:
+			print "\n\nola"
 			return get_home()
 
-	def POST(self, length=8):
-		some_string = ''.join(random.sample(string.hexdigits, int(length)))
-		cherrypy.session['mystring'] = some_string
-		some_string = {"result": [some_string] }
-		return json.dumps(some_string)
 
-	def POST(self, door, user):
-		db = DataBase()
-		print door
-		print user
-		res, msg = db.insert_door_to_user(user, door)
-		return json.dumps({"result" : msg})
-		db.conn.close()
 
-	def PUT(self, _id, num, loc):
-		with sqlite3.connect(DB_STRING) as conn:
-			c= conn.cursor()
-			try:
-				c.execute("UPDATE doors SET num=?, location=? WHERE _id=?",
-				  (num, loc, _id))
-				conn.commit()
-				return json.dumps({"result" : [1, "Successful!"]})
-			except Exception, e:
-				return json.dumps({"result" : [0, "ERROR:" + str(e)]})
-			
+	@cherrypy.expose
+	def POST(self, t , door= None, user= None, num= None, loc = None, arg5 = None):
+		t = int(t)
+		if t == 1 :
+			db = DataBase()
+			print door
+			print user
+			res, msg = db.insert_door_to_user(user, door)
+			db.conn.close()
+			return json.dumps({"result" : msg})
+		elif t == 2:
+			db = DataBase()
+			res, msg = db.insert_door(num, loc)
+			db.conn.close()
+			return json.dumps({"result": msg})
+		elif t==3:
+			db = DataBase()
+			#name, email, knock, _pass, uid
+			res, msg = db.insert_user(door, user, num, loc, arg5)
+			db.conn.close()
+			return json.dumps({"result": msg})
 
+
+
+	@cherrypy.expose
+	def PUT(self,t,  _id= None, num = None, loc= None):
+		t = int(t)
+		if t== 1:
+			with sqlite3.connect(DB_STRING) as conn:
+				c= conn.cursor()
+				try:
+					c.execute("UPDATE doors SET num=?, location=? WHERE _id=?",
+					  (num, loc, _id))
+					conn.commit()
+					return json.dumps({"result" : [1, "Successful!"]})
+				except Exception, e:
+					return json.dumps({"result" : [0, "ERROR:" + str(e)]})
+		if t==2:
+			pass
+
+	@cherrypy.expose
 	def DELETE(self, user, door):
 		db = DataBase()
 
@@ -225,12 +247,47 @@ class WebPage(object): #Root
 	@cherrypy.expose
 	def login(self):
 		return open('./admin-page/login.html')
-		
+
+	@cherrypy.expose
+	def read_card(self):
+		print 'ola'
+		UDP_IP = ''
+		UDP_PORT = 5005
+		sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+		sock.sendto('True', (UDP_IP, UDP_PORT))
+		print 'ola'
+		sock.settimeout(5)
+		try :
+			data, addr = sock.recvfrom(1024)  # buffer size is 1024 bytes
+		except :
+			print 'timeout'
+			return ''
+		print "received message:", data
+		return data
+	
+	#def add
 
 	@cherrypy.expose
 	@require()
 	def index(self):
 		return open('./admin-page/index.html')
+    #
+	# @cherrypy.expose
+	# @require()
+	# def stats(self):
+	# 	return open('./admin-page/stats.html')
+    #
+	# @cherrypy.expose
+	# @require()
+	# def users(self):
+	# 	return open('./admin-page/users.html')
+    #
+	# @cherrypy.expose
+	# @require()
+	# def doors(self):
+	# 	return open('./admin-page/doors.html')
+
+
 			
 
 class Public(object):
@@ -244,16 +301,34 @@ class Public(object):
 
 if __name__ == '__main__':
 
+	conf = {
+		'/': {
+			'tools.sessions.on': True,
+			'tools.auth.on': True,
+			'tools.staticdir.root': os.path.abspath(os.getcwd())
+
+		},
+		'/generator':{
+			'request.dispatch': cherrypy.dispatch.MethodDispatcher(),
+			'tools.response_headers.on': True,
+			'tools.response_headers.headers': [('Content-Type', 'text/plain')]
+
+		},
+		'/auth' :{
+			# 'request.dispatch': cherrypy.dispatch.MethodDispatcher(),
+			# 'tools.response_headers.on': True,
+			# 'tools.response_headers.headers': [('Content-Type', 'text/plain')]
+		},
+		'/static':{
+			'tools.staticdir.on': True,
+			'tools.staticdir.dir': './admin-page'
+		}
+	}
+
 	webapp = WebPage()
 	webapp.generator = WebService() #restricted
 	webapp.auth = AuthController()
 	webapp.static = Public()
 	cherrypy.server.socket_host = 'localhost'
 	cherrypy.server.socket_port = 8080
-	cherrypy.quickstart(webapp , '/')
-
-# '/auth': {
-# 		'request.dispatch': cherrypy.dispatch.MethodDispatcher(),
-# 		'tools.response_headers.on': True,
-# 		'tools.response_headers.headers': [('Content-Type', 'text/plain')],
-# 		},
+	cherrypy.quickstart(webapp , '/', conf)

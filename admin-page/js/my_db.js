@@ -95,13 +95,16 @@ function add_user(db_door_id) {
             else{
                 //retrive ID
                 db_user_id = db_user_id[0];
-                $.post("/generator", {"door": db_door_id, "user": db_user_id})
+                $.post("/generator", {"t":1, "door": db_door_id, "user": db_user_id})
                     .done(function(json) {
                         var obj = jQuery.parseJSON( json );
                         //result: message
                         alert(obj.result);
                         t_doors.ajax.reload();
-                        table.ajax.reload();
+                        if($('#users_table').visibility == 'visible'){
+                            table.ajax.reload();
+                        }
+
 
                     });
             }
@@ -134,7 +137,7 @@ function update_door() {
 
 
     $.ajax({
-        url:'http://localhost:8080/generator?_id=' +  model_door+ '&num=' + num + '&loc='+ loc,
+        url:'http://localhost:8080/generator?t=1&_id=' +  model_door+ '&num=' + num + '&loc='+ loc,
         type: 'PUT',
         success: function(json) {
             var obj = jQuery.parseJSON( json );
