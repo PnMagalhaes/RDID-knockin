@@ -13,7 +13,7 @@ class ServerActions:
             'validate': self.processStatus
         }
 
-        self.db = DataBase('../rfid.db')
+        self.db = DataBase('/home/daniela/Documents/RFID/RDID-knockin/rfid.db')
 
     def handleRequest(self, s, request, client):
         """Handle a request from a client socket.
@@ -70,12 +70,24 @@ class ServerActions:
             client.sendResult({"error": "wrong message format", "seq": data["seq"]})
         
         knock = data['knock']
-        
-        uid = data["rfid"]
+
+        knock = knock[:-1] # vem com uma virgula a mais
+
+        uid = None
+
+        if not len(str(data["rfid"])) == 14:
+            uid = "0"*(14-len(str(data['rfid']))) + str(data["rfid"])
+        else:
+            uid = str(data["rfid"])
         door_data = data["door"]
+        print('\n\n')
+        print knock
+        print uid
+
         self.db.c.execute('select _id from doors where location =? and num= ?', (door_data[1], door_data[0]) )
         client.id = self.db.c.fetchone()[0]
         #boolean
+
         response = self.db.validate(list_knock= knock , _pass= uid, door_id=client.id, b = door_data[2])
         if response[0] :
             client.sendResult({"type": 'validate',"result": "True", "seq": data["seq"]})

@@ -2,7 +2,7 @@
 
 import sys
 from socket import *
-HOST = "192.168.43.6"   # All available interfaces
+HOST = ""   # All available interfaces
 PORT = 8080  # The server port
 import json
 s = socket(AF_INET, SOCK_STREAM)    # create a TCP socket
@@ -11,8 +11,10 @@ s = socket(AF_INET, SOCK_STREAM)    # create a TCP socket
 s.connect((HOST, PORT)) # connect to server on the port
 uid = 'uid'
 knock = 'knock'
-obj = {"type": "validate" , "rfid": uid, "knock": knock, "door": [1 ,'det8'] , "seq": 1}
-s.send(json.dumps(obj) + "\n\n" )               # send the data
+obj = '{"type": "validate" , "rfid": "4090909090909" , "knock": [50,351,702,401,100,0] , "door": [4 ,103] , "seq": 1}'
+#obj = {"type": "validate" , "rfid": uid, "knock": knock, "door": [1 ,'det8'] , "seq": 1}
+#s.send(json.dumps(obj) + "\n\n" )               # send the data
+s.send(obj + "\n\n" )               # send the data
 print('send--> ' + str(obj))                                  
 data = s.recv(64 * 1024)                 # receive up to 1K bytes
 print 'recv--> ' + data
