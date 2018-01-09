@@ -16,6 +16,10 @@ $(document).ready(
             }
         });
 
+        setInterval(function() {
+            table.ajax.reload();
+        }, 5000 );
+
     });
 var x_label, y_label;
 $.get("/generator", {"t": 6, "d1":  2017 }) .done(function(json) {

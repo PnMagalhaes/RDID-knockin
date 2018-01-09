@@ -25,32 +25,34 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="/static/index.html">Admin KnockIt</a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="/index">Admin KnockIt</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                <a class="nav-link" href="/static/index.html">
+                <a class="nav-link" href="/index">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">Home</span>
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                <a class="nav-link" href="/static/users.html">
+                <a class="nav-link" href="/users">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">Users</span>
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                <a class="nav-link" href="/static/doors.html">
+                <a class="nav-link" href="/doors">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">Doors</span>
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                <a class="nav-link" href="/static/stats.html">
+                <a class="nav-link" href="/stats">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">Stats</span>
                 </a>
@@ -85,7 +87,8 @@
         <!-- START content-->
         <div class="card mb-3">
             <div class="card-header">
-                <i class="fa fa-table"></i> Data Table Users</div>
+                <i class="fa fa-table"></i> Data Table Users
+            </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -128,7 +131,39 @@
                     <!-- Modal Body -->
                     <div class="modal-body">
 
+
                         <form role="form">
+
+
+                            <div class="form-group">
+                                <div class="form-row">
+
+                                    <label for="exampleInputName">Name</label>
+                                    <input class="form-control" id="exampleInputName" type="text"
+                                           aria-describedby="nameHelp"
+                                           placeholder="Enter name">
+
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input class="form-control" id="exampleInputEmail1" type="email"
+                                       aria-describedby="emailHelp"
+                                       placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <div class="form-row">
+
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input class="form-control" id="exampleInputPassword1" type="password"
+                                           placeholder="Password">
+
+                                </div>
+                            </div>
+
+<!--
+
                             <div class="form-group">
                                 <label for="text_num">Number</label>
                                 <input type="text" class="form-control"
@@ -139,7 +174,7 @@
                                 <input type="text" class="form-control"
                                        id="text_loc" placeholder="Location"/>
                             </div>
-
+-->
 
 
                         </form>
@@ -153,7 +188,7 @@
                                 data-dismiss="modal">
                             Close
                         </button>
-                        <button type="button" class="btn btn-primary" onclick="update_door()">
+                        <button type="button" class="btn btn-primary" onclick="update_user()">
                             Save changes
                         </button>
                     </div>
@@ -179,7 +214,8 @@
     <i class="fa fa-angle-up"></i>
 </a>
 <!-- Logout Modal-->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -192,7 +228,7 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <a class="btn btn-primary" href="/auth/logout">Logout</a>
             </div>
         </div>
     </div>

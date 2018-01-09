@@ -10,6 +10,15 @@ $(document).ready(
             }
         });
 
+        $('#dataTable tbody').on( 'click', 'input.btn', function () {
+            console.log("in");
+            var d = table.row($(this).parents('tr')).data();
+            $("#exampleInputName").val(d[2]) ;
+            $("#exampleInputEmail1").val(d[0]);
+            $("#exampleInputPassword1").val(d[5]);
+
+        });
+
     });
 
 var model_user = null;
@@ -26,17 +35,9 @@ function edit_user(door) {
 }
 
 function update_user() {
-    try{
-        var num = parseInt($('#text_num').val());
-    }catch(err){
-        alert("ERROR: Number not integer!");
-        return;
-    }
-    var loc = $('#text_loc').val();
-
-
     $.ajax({
-        url:'http://localhost:8080/generator?t=2_id=' +  model_door+ '&num=' + num + '&loc='+ loc,
+        url:'http://localhost:8080/generator?t=2&_id=' +  model_door+ '&num=' + $("#exampleInputName").val()
+        + '&loc='+ $("#exampleInputEmail1").val()+ '&arg1='+ $("#exampleInputPassword1").val(),
         type: 'PUT',
         success: function(json) {
             var obj = jQuery.parseJSON( json );
@@ -44,10 +45,8 @@ function update_user() {
             alert(obj.result[1]);
             if (obj.result[0]){
                 //close modal
-                $('#text_num').val("");
-                $('#text_loc').val("");
                 $('#myModal').modal('hide');
-                t_doors.ajax.reload();
+                table.ajax.reload();
             }
 
         }

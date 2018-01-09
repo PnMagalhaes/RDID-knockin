@@ -22,10 +22,13 @@ class ClientActions:
         """Handle a request from a client socket.
         """
         try:
+            print request
+            print str(request)
             logging.info("HANDLING message from %s: %r" %
-                         (client, repr(request)))
+                         (client, request))
 
             try:
+
                 req = json.loads(request)
             except:
                 logging.exception("Invalid message from client")

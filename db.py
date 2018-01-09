@@ -9,7 +9,7 @@ class DataBase(object):
 		self.c = self.conn.cursor()
 		self.c.execute("PRAGMA foreign_keys = ON")
 		
-	def validate(self, list_knock , _pass, door_id):
+	def validate(self, list_knock , _pass, door_id, b):
 		self.c.execute('select _id, knock from users where uid=?', _pass)
 		r = self.c.fetchone()
 		if r ==None:
@@ -24,8 +24,9 @@ class DataBase(object):
 		db_door_id = r[0]
 		if not self.validate_knock(db_knock, list_knock) :
 			return (False, "Wrong knock sequence" + list_knock  )
-
-		self.insert_access('time', db_user_id , db_door_id, 1 )
+		from time import gmtime, strftime
+		time = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+		self.insert_access(time , db_user_id , db_door_id,b, 1 )
 		return (True, "Successful!" ) 
 
 
@@ -34,7 +35,7 @@ class DataBase(object):
 
 	def insert_user(self,name, email, knock, _pass, uid):
 		try:
-			self.c.execute('insert into users(name , email , knock , password , uid ) values (?, ?, ?,?, ?);', name, email, knock, _pass, uid)
+			self.c.execute('insert into users(name , email , knock , password , uid ) values (?, ?, ?,?, ?);', (name, email, knock, _pass, uid))
 			self.conn.commit()
 			return(1, 'Successful!')
 		except Exception, e:
@@ -67,11 +68,11 @@ class DataBase(object):
 			print e
 			return (0, 'ERROR: '+str(e))
 
-	def insert_access(self,_time, user, door, attempts= None):
+	def insert_access(self,_time, user, door,b,  attempts= None):
 		try:
 			self.c.execute('select * from access where user =? and door =? amd _time=?',(user, door, _time))
 			if self.c.fetchall() == [] :
-				self.c.execute('''insert into access(_time, user, door, attempts) values (?,?);''', (_time, user, door, attempts))
+				self.c.execute('''insert into access(_time, user, door, attempts, battery) values (?,?,?, ?, ?);''', (_time, user, door, attempts, b))
 				self.conn.commit()
 				return(1, 'Successful!')
 			else:

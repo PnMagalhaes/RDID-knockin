@@ -19,13 +19,15 @@ class ServerActions:
         """Handle a request from a client socket.
         """
         try:
-            logging.info("HANDLING message from %s: %r" %
-                         (client, repr(request)))
+
+            logging.info("HANDLING message from %s: %s" %
+                         (client, str(request)))
 
             try:
                 req = json.loads(request)
             except:
                 logging.exception("Invalid message from client")
+                client.sendResult({"error": "wrong message format"})
                 return
 
             if not isinstance(req, dict):
@@ -74,6 +76,9 @@ class ServerActions:
         self.db.c.execute('select _id from doors where location =? and num= ?', (door_data[1], door_data[0]) )
         client.id = self.db.c.fetchone()[0]
         #boolean
-        response = self.db.validate(list_knock= knock , _pass= uid, door_id=client.id)
-        client.sendResult({"type": 'validate',"result": response, "seq": data["seq"]})
+        response = self.db.validate(list_knock= knock , _pass= uid, door_id=client.id, b = door_data[2])
+        if response[0] :
+            client.sendResult({"type": 'validate',"result": "True", "seq": data["seq"]})
+        else:
+            client.sendResult({"type": 'validate', "result": response[1], "seq": data["seq"]})
 

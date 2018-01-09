@@ -13,6 +13,18 @@ $(document).ready(    function() {
 
         });
 
+    var table = $("#dataTable").DataTable({
+        ajax: {
+            url: 'http://localhost:8080/generator?t=11',
+            dataSrc: 'data'
+
+        }
+    });
+
+    setInterval(function() {
+        table.ajax.reload();
+    }, 3000 );
+
 
 
 })

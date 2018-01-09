@@ -17,8 +17,8 @@
       <file leaf-file-name="doors.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doors.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="213" column="14" lean-forward="false" selection-start-line="213" selection-start-column="14" selection-end-line="213" selection-end-column="14" />
+            <state relative-caret-position="579">
+              <caret line="210" column="66" lean-forward="false" selection-start-line="210" selection-start-column="66" selection-end-line="210" selection-end-column="66" />
               <folding>
                 <element signature="n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
@@ -26,41 +26,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="stats.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/stats.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="202" column="61" lean-forward="false" selection-start-line="202" selection-start-column="61" selection-end-line="202" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="users.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/users.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2596">
-              <caret line="20" column="37" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="21" selection-end-column="53" />
+            <state relative-caret-position="513">
+              <caret line="190" column="92" lean-forward="false" selection-start-line="190" selection-start-column="92" selection-end-line="190" selection-end-column="92" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="my_index_db.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/my_index_db.js">
+      <file leaf-file-name="my_users_db.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/my_users_db.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="31" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="3" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="my_db.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/my_db.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="148" column="23" lean-forward="true" selection-start-line="148" selection-start-column="23" selection-end-line="148" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/home.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="836">
+              <caret line="38" column="56" lean-forward="false" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -69,21 +59,28 @@
       <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/register.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="60" column="71" lean-forward="false" selection-start-line="60" selection-start-column="71" selection-end-line="60" selection-end-column="71" />
-              <folding>
-                <element signature="n#style#0;n#button#1;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#2;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="447">
+              <caret line="70" column="19" lean-forward="true" selection-start-line="26" selection-start-column="12" selection-end-line="70" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="my_db.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/my_db.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-540">
+              <caret line="26" column="22" lean-forward="false" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/register.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+            <state relative-caret-position="-587">
+              <caret line="13" column="35" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="13" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -111,9 +108,13 @@
       <find>/*# sourceMappingURL=bootstrap.min.css.map */</find>
       <find>//# sourceMappingURL=bootstrap.bundle.js.map</find>
       <find>ost</find>
-      <find>post</find>
       <find>visibility</find>
       <find>put</find>
+      <find>post</find>
+      <find>redirec</find>
+      <find>redi</find>
+      <find>exampleModal</find>
+      <find>dele</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -123,7 +124,6 @@
         <option value="$PROJECT_DIR$/tables.html" />
         <option value="$PROJECT_DIR$/js/sb-admin-datatables.min.js" />
         <option value="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/js/my_stats_db.js" />
         <option value="$PROJECT_DIR$/home.html" />
         <option value="$PROJECT_DIR$/js/home.js" />
         <option value="$PROJECT_DIR$/css/sd-admin1.css" />
@@ -132,21 +132,22 @@
         <option value="$PROJECT_DIR$/jquery/jquery.js" />
         <option value="$PROJECT_DIR$/jquery/jquery.easing.js" />
         <option value="$PROJECT_DIR$/css/dataTables.bootstrap4.css" />
-        <option value="$PROJECT_DIR$/doors.html" />
         <option value="$PROJECT_DIR$/forgot-password.html" />
         <option value="$PROJECT_DIR$/js/Chart.js" />
-        <option value="$PROJECT_DIR$/stats.html" />
         <option value="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/js/bootstrap.bundle.js" />
-        <option value="$PROJECT_DIR$/login.html" />
-        <option value="$PROJECT_DIR$/users.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/my_db.js" />
-        <option value="$PROJECT_DIR$/js/my_users_db.js" />
-        <option value="$PROJECT_DIR$/js/my_index_db.js" />
-        <option value="$PROJECT_DIR$/register.html" />
         <option value="$PROJECT_DIR$/js/register.js" />
+        <option value="$PROJECT_DIR$/js/my_index_db.js" />
+        <option value="$PROJECT_DIR$/js/my_stats_db.js" />
+        <option value="$PROJECT_DIR$/register.html" />
+        <option value="$PROJECT_DIR$/login.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/doors.html" />
+        <option value="$PROJECT_DIR$/js/my_users_db.js" />
+        <option value="$PROJECT_DIR$/users.html" />
+        <option value="$PROJECT_DIR$/stats.html" />
       </list>
     </option>
   </component>
@@ -176,7 +177,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -194,6 +194,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -202,6 +203,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -241,15 +243,15 @@
       <workItem from="1513185565498" duration="5768000" />
       <workItem from="1515346462126" duration="2379000" />
       <workItem from="1515403345197" duration="9615000" />
+      <workItem from="1515448518226" duration="11202000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76071000" />
+    <option name="totallyTimeSpent" value="87273000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="31" width="1920" height="1049" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18961865" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -365,21 +367,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/chart.js/Chart.js" />
-    <entry file="file://$PROJECT_DIR$/stats.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5918">
-          <caret line="269" column="21" lean-forward="false" selection-start-line="269" selection-start-column="21" selection-end-line="269" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forgot-password.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="968">
-          <caret line="44" column="57" lean-forward="false" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.min.css" />
     <entry file="file://$PROJECT_DIR$/js/bootstrap.bundle.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -397,95 +384,108 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.css" />
-    <entry file="file://$PROJECT_DIR$/doors.html">
+    <entry file="file://$PROJECT_DIR$/js/home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="213" column="14" lean-forward="false" selection-start-line="213" selection-start-column="14" selection-end-line="213" selection-end-column="14" />
-          <folding>
-            <element signature="n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+        <state relative-caret-position="242">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/my_stats_db.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2416">
-          <caret line="12" column="55" lean-forward="false" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="55" />
+        <state relative-caret-position="418">
+          <caret line="20" column="12" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/js/my_index_db.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="28" column="37" lean-forward="false" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+        <state relative-caret-position="550">
+          <caret line="25" column="14" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="25" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/my_users_db.js">
+    <entry file="file://$PROJECT_DIR$/forgot-password.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+        <state relative-caret-position="786">
+          <caret line="44" column="57" lean-forward="false" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1038">
-          <caret line="48" column="36" lean-forward="true" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
+        <state relative-caret-position="470">
+          <caret line="59" column="55" lean-forward="false" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/home.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2596">
-          <caret line="20" column="37" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="21" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/my_db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="148" column="23" lean-forward="true" selection-start-line="148" selection-start-column="23" selection-end-line="148" selection-end-column="23" />
+        <state relative-caret-position="538">
+          <caret line="263" column="68" lean-forward="true" selection-start-line="263" selection-start-column="68" selection-end-line="263" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="60" column="71" lean-forward="false" selection-start-line="60" selection-start-column="71" selection-end-line="60" selection-end-column="71" />
-          <folding>
-            <element signature="n#style#0;n#button#1;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#2;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/my_index_db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="31" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="3" selection-end-column="31" />
+        <state relative-caret-position="447">
+          <caret line="70" column="19" lean-forward="true" selection-start-line="26" selection-start-column="12" selection-end-line="70" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/register.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+        <state relative-caret-position="-587">
+          <caret line="13" column="35" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="13" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="190" column="92" lean-forward="false" selection-start-line="190" selection-start-column="92" selection-end-line="190" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/my_users_db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="38" column="56" lean-forward="false" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/my_db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-540">
+          <caret line="26" column="22" lean-forward="false" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doors.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="210" column="66" lean-forward="false" selection-start-line="210" selection-start-column="66" selection-end-line="210" selection-end-column="66" />
+          <folding>
+            <element signature="n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stats.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="202" column="61" lean-forward="false" selection-start-line="202" selection-start-column="61" selection-end-line="202" selection-end-column="61" />
           <folding />
         </state>
       </provider>

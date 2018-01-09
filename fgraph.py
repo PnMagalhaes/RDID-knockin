@@ -237,6 +237,25 @@ def get_home():
         return json.dumps({"result": result})
 
 
+def get_battery():
+    with sqlite3.connect(DB_STRING) as con:
+        c = con.cursor()
+        result = []
+        for _id in c.execute('SELECT distinct door FROM access ;'):
+            with sqlite3.connect(DB_STRING) as con2:
+                c2 = con2.cursor()
+
+                c2.execute('SELECT door, battery FROM access where door = ?  order by date(_time) desc limit 1 ; ', str(_id[0]))
+                f = []
+                res = c2.fetchall()
+
+                for door, battery in res :
+                    result = result + [[door, battery]]
+
+
+        print json.dumps({"data": result})
+        return json.dumps({"data": result})
+
 if __name__ == '__main__':
     conn = sqlite3.connect('rfid.db')
     c = conn.cursor()

@@ -11,9 +11,9 @@ import logging
 from client import *
 
 from server_actions import *
-
+print('[INFO] ip: ',str(sys.argv[1]).split('/')[0])
 # Server address
-HOST = ""   # All available interfaces
+HOST = str(sys.argv[1]).split('/')[0]   # All available interfaces
 PORT = 8080  # The server port
 
 BUFSIZE = 512 * 1024
@@ -173,8 +173,8 @@ class Server:
 
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        PORT = int(sys.argv[1])
+    if len(sys.argv) > 2:
+        PORT = int(sys.argv[2])
 
     logging.basicConfig(stream=sys.stdout, level=logging.DEBUG, formatter=logging.Formatter(
         '%(asctime)s - %(levelname)s - %(message)s'))

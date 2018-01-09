@@ -58,17 +58,20 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-primary btn-block" onclick="read()">Read Tag</button>
+                <button type="button" class="btn btn-primary " onclick="read()">Read Tag</button>
+                <label id="feedback">[tag]</label><p></p>
+                <button type="button" style="margin-top: 10px; margin-bottom: 10px" class="btn btn-primary " onclick="measure()">Knock</button>
 
-                <button style="margin-top: 10px; margin-bottom: 10px" class="btn btn-primary " onclick="measure()">Read Tag</button>
+                <button type="button" style="margin-top: 10px; margin-bottom: 10px" class="btn btn-primary " onclick="stop_clock()">Commit Knock pattern</button>
 
-                <button style="margin-top: 10px; margin-bottom: 10px" class="btn btn-primary " onclick="stop_clock()">Read Tag</button>
-                <label id="feedback">[knock]</label>
-                <a class="btn btn-primary btn-block" href="/static/login.html">Register</a>
+                <label>  knock(ms) [ </label>
+                <label id="feedback2">[knock]</label>
+                <label>]</label>
+                <button type="button" class="btn btn-primary btn-block" onclick="register()">Register</button> <!--href="/static/login.html"-->
             </form>
             <div class="text-center">
-                <a class="d-block small mt-3" href="/static/login.html">Login Page</a>
-                <a class="d-block small" href="/static/forgot-password.html">Forgot Password?</a>
+                <a class="d-block small mt-3" href="/login">Login Page</a>
+      <!--          <a class="d-block small" href="/static/forgot-password.html">Forgot Password?</a>-->
             </div>
         </div>
     </div>

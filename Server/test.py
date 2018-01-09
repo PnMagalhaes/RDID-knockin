@@ -2,7 +2,7 @@
 
 import sys
 from socket import *
-HOST = ""   # All available interfaces
+HOST = "192.168.43.6"   # All available interfaces
 PORT = 8080  # The server port
 import json
 s = socket(AF_INET, SOCK_STREAM)    # create a TCP socket
