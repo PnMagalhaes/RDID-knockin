@@ -11,7 +11,7 @@ function register() {
     var email = $("#exampleInputEmail1").val();
     var knock = k_list;
     var _pass = $("#exampleInputPassword1").val();
-    var uid = $("#feedback").val();
+    var uid = $("#feedback").text();
 
     $.get("/post", {"t":3, "name": name, "email": email, "knock": "[" + knock + "]" , "_pass": _pass, "uid": uid})
     .done(function(json) {
