@@ -13,7 +13,7 @@ class ServerActions:
             'validate': self.processStatus
         }
 
-        self.db = DataBase('/home/daniela/Documents/RFID/RDID-knockin/rfid.db')
+        self.db = DataBase('/home/toipacoelho/RDID-knockin/rfid.db')
 
     def handleRequest(self, s, request, client):
         """Handle a request from a client socket.
@@ -76,7 +76,7 @@ class ServerActions:
         uid = None
 
         if not len(str(data["rfid"])) == 14:
-            uid = "0"*(14-len(str(data['rfid']))) + str(data["rfid"])
+            uid = "0"*(13-len(str(data['rfid']))) + str(data["rfid"])
         else:
             uid = str(data["rfid"])
         door_data = data["door"]
@@ -92,5 +92,5 @@ class ServerActions:
         if response[0] :
             client.sendResult({"type": 'validate',"result": "True", "seq": data["seq"]})
         else:
-            client.sendResult({"type": 'validate', "result": response[1], "seq": data["seq"]})
+            client.sendResult({"type": 'validate', "result": ["False", response[1]], "seq": data["seq"]})
 

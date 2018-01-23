@@ -10,10 +10,10 @@ class DataBase(object):
 		self.c.execute("PRAGMA foreign_keys = ON")
 		
 	def validate(self, list_knock , _pass, door_id, b):
-		self.c.execute('select _id, knock from users where uid=?', _pass)
+		self.c.execute('select _id, knock from users where uid=?', (_pass,))
 		r = self.c.fetchone()
 		if r ==None:
-			return (False, "UID" + _pass + "not in database" )
+			return (False, "UID " + _pass + " not in database" )
 
 		db_user_id = r[0]
 		db_knock = r[1]
