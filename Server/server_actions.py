@@ -88,7 +88,7 @@ class ServerActions:
         client.id = self.db.c.fetchone()[0]
         #boolean
 
-        response = self.db.validate(list_knock= knock , _pass= uid, door_id=client.id, b = door_data[2])
+        response = self.db.validate(list_knock= knock , _pass= uid.upper(), door_id=client.id, b = door_data[2])
         if response[0] :
             client.sendResult({"type": 'validate',"result": "True", "seq": data["seq"]})
         else:

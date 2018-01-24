@@ -1,5 +1,5 @@
 import sqlite3
-GAP = 0.2
+GAP = 0.4
 class DataBase(object):
 	"""docstring for DataBase"""
 	def __init__(self, file_path='rfid.db' ):
@@ -31,13 +31,21 @@ class DataBase(object):
 
 
 	def validate_knock(self, k_stored , k1):
-		if not len(k_stored)==len(k1):
+		print "Hello"
+		print k_stored
+		print k1
+		if len(k_stored) > len(k1):
 			return False
 		access = True
+		print len(k_stored)
 		for i in range(0, len(k_stored)):
 			#margen de 20%
-			if (k1[i] < (1-GAP) * k_stored[i] or k1[i] > (1+GAP) * k_stored[i]) :
-				access = False;
+			print GAP
+			print k1
+			print k_stored
+			if ( abs(k1[i]/k_stored[i] -1 ) > GAP ):
+			#if (k1[i] < (1-GAP) * k_stored[i] or k1[i] > (1+GAP) * k_stored[i]) :
+				access = False
 
 		return access
 

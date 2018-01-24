@@ -2,7 +2,7 @@
 
 import sys
 from socket import *
-HOST = ""   # All available interfaces
+HOST = "192.168.43.6"   # All available interfaces
 PORT = 8080  # The server port
 import json
 s = socket(AF_INET, SOCK_STREAM)    # create a TCP socket
@@ -11,7 +11,7 @@ s = socket(AF_INET, SOCK_STREAM)    # create a TCP socket
 s.connect((HOST, PORT)) # connect to server on the port
 uid = 'uid'
 knock = 'knock'
-obj = '{"type": "validate" , "rfid": "4090909090909" , "knock": [50,351,702,401,100,0] , "door": [4 ,103] , "seq": 1}'
+obj = '{"door": [4, "DETI", 3300], "knock": [808, 758, 0], "rfid": "040cbe82ba4881", "type": "validate", "seq": 1}'
 #obj = {"type": "validate" , "rfid": uid, "knock": knock, "door": [1 ,'det8'] , "seq": 1}
 #s.send(json.dumps(obj) + "\n\n" )               # send the data
 s.send(obj + "\n\n" )               # send the data
@@ -20,7 +20,7 @@ data = s.recv(64 * 1024)                 # receive up to 1K bytes
 print 'recv--> ' + data
 
 
-# #!/usr/bin/python
+# #!/usr/bin/python{"type": "validate" , "rfid": "4090909090909" , "knock": [50,351,702,401,100,0] , "door": [4 ,103] , "seq": 1}
 
 # #
 # #  secure shell pipe module

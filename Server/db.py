@@ -1,5 +1,5 @@
 import sqlite3
-GAP = 0.2
+GAP = 0.4
 class DataBase(object):
 	"""docstring for DataBase"""
 	def __init__(self, file_path='rfid.db' ):
@@ -20,10 +20,10 @@ class DataBase(object):
 		self.c.execute('select _id from door_to_user where _user =? and _door =?',(db_user_id, door_id))
 		r = self.c.fetchone()
 		if r ==None:
-			return (False, "User has no access to door " + door_id )
+			return (False, "User has no access to door " + str(door_id) )
 		db_door_id = r[0]
 		if not self.validate_knock(db_knock, list_knock) :
-			return (False, "Wrong knock sequence" + list_knock  )
+			return (False, "Wrong knock sequence" + str(list_knock)  )
 		from time import gmtime, strftime
 		time = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 		self.insert_access(time , db_user_id , db_door_id,b, 1 )
@@ -31,13 +31,44 @@ class DataBase(object):
 
 
 	def validate_knock(self, k_stored , k1):
-		if not len(k_stored)==len(k1):
+		print "Hello"
+		k_stored = k_stored[1:-1].split(",")
+		for i in range(len(k_stored)):
+			k_stored[i]=int(k_stored[i])
+		
+		if not len(k_stored) == len(k1):
 			return False
+		
 		access = True
 		for i in range(0, len(k_stored)):
 			#margen de 20%
-			if (k1[i] < (1-GAP) * k_stored[i] or k1[i] > (1+GAP) * k_stored[i]) :
-				access = False;
+			
+			if ( abs(k1[i]*1.0/k_stored[i] -1 ) > GAP ):
+				print abs(k1[i]*1.0/k_stored[i])
+				#if (k1[i] < (1-GAP) * k_stored[i] or k1[i] > (1+GAP) * k_stored[i]) :
+				access = False
+			else:
+				print "matched"
+		# if not len(porta)>=len(real):
+		# 	return False
+		# j = 0
+		# access = True
+		# for i in range(0, len(real)):
+			
+		# 	for j in range(j, len(porta))
+		# 	#margen de 20%
+		# 		if ( abs(porta[j]/real[i] -1 )< GAP ):
+		# 			j = j+1
+					
+		# 			break
+		# 		else:
+		# 			porta[j+1]+= porta[j]
+		# 			if (porta[j]> real[i]) :
+		# 				return False
+		# 		#access = False;
+        #     if j==len(porta):
+		# 		return False
+		# return True
 
 		return access
 
