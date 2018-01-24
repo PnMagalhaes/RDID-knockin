@@ -1,5 +1,5 @@
 import sqlite3
-GAP = 0.4
+GAP = 0.2
 class DataBase(object):
 	"""docstring for DataBase"""
 	def __init__(self, file_path='rfid.db' ):
